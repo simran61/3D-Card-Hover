@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: rgb(27, 27, 27);
+}
+
+.card{
+    position: relative;
+    width: 600px;
+    height: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.card .circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card .circle::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #d83133;
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+
+.card:hover .circle:before{
+    /* background: #0065c3; */
+    /* background: #3da0fd; */
+    background: #9c8e10;
+    clip-path: circle(400px at center);
+}
+
+.card img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.card:hover img{
+    left: 72%;
+    height: 510px;
+}
+
+.card .content{
+    position: relative;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card:hover .content{
+    left: 0%;
+    opacity: 1;
+    visibility: visible;
+}
+
+.card .content h2{
+    color: white;
+    font-size: 2em;
+    line-height: 1em;
+    margin-bottom: 10px;
+}
+
+.card .content p{
+    color: white;
+}
+
+.card .content a{
+    position: relative;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 10px;
+    color: black;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+}
